@@ -58,8 +58,9 @@ function App() {
 
   // Create a new blank draft
   const handleNewDraft = async () => {
+    // Requires a strict UUID v4 to match the Supabase Postgres schema.
     const newEntry: JournalEntry = {
-      id: Date.now().toString(), // Or uuid() if strictly matching
+      id: crypto.randomUUID(),
       date: new Date().toISOString(),
       title: '无标题草稿',
       content: ''
