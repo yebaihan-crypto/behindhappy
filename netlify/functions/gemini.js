@@ -32,7 +32,7 @@ exports.handler = async (event, context) => {
 
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-2.5-flash',
       contents: `${SYSTEM_PROMPT}\n\n用户日记文本：\n"${content}"`,
     });
 
